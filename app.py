@@ -5,21 +5,26 @@ app.config['SQLALCHEMY_DATABASE_URI']='sqlite:////tmp/test.db'
 
 @app.route('/')
 def index():
-	return 'Hello world!'
+	return render_template("login-pg.html")
 
 db=SQLAlchemy(app)
 
 class Users(db.Model):
 	__tablename__="Users"
-	username=db.Column('username',db.Unicode)
-	password=db.Column('password'db.Unicode)
+	id = db.Column(db.Integer, primary_key=True)
+	username=db.Column('username',db.String)
+	password=db.Column('password',db.String)
 db.create_all()
 
 @app.route('/submit_form',methods=['POST'])
 def submit_form():
 	username = request.form['username']
 
-users = <Users>.query.all()
+@app.route('/signup_form',methods=['POST'])
+def signup_form():
+	username = request.form['username']
+
+users = Users.query.all()
 
 if __name__ == "__main__":
 	app.run()
