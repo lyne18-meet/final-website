@@ -119,46 +119,29 @@ span.psw {
 </style-->
 </head>
 <body>
-<!--div class="container"-->
+<div class="container">
 
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
-
+  <button onclick="document.getElementById('id00').style.display='block'" style="width:auto; background-color: white; color: black;">Login</button>
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" style="padding:35px 50px;">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
-        </div>
-        <div class="modal-body" style="padding:40px 50px;">
-          <form role="form" action="{{ url_for('submit_form') }}" method="post">
-            <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="text" class="form-control" id="psw" placeholder="Enter password">
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="" checked>Remember me</label>
-            </div>
-              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-          <p>Not a member? <a href="#">Sign Up</a></p>
-          <p>Forgot <a href="#">Password?</a></p>
-        </div>
+  <div id="id00" class="modal">
+  <span onclick="document.getElementById('id00').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/submit_form" method="post">
+    <div class="login-container">
+      <h1>Login</h1>
+      <hr>
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id00').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Login</button>
       </div>
-      
     </div>
-  </div> 
+  </form>
+</div>
 </div>
  
 <script>
@@ -205,7 +188,7 @@ $(document).ready(function(){
 
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="{{ url_for('signup_form') }}" method="post">
+  <form class="modal-content" action="/signup_form" method="post">
     <div class="container">
       <h1>Sign Up</h1>
       <p>Please fill in this form to create an account.</p>
@@ -216,15 +199,9 @@ $(document).ready(function(){
       <label><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
 
-      <label><b>Repeat Password</b></label>
+<!--       <label><b>Repeat Password</b></label>
       <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-      
-      <label>
-        <input type="checkbox" checked="checked" style="margin-bottom:15px"> Remember me
-      </label>
-
-      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
+ -->      
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
         <button type="submit" class="signupbtn">Sign Up</button>

@@ -52,9 +52,9 @@ body {
   </div>
 </div>
 
-<img src="Profile_avatar.png" alt="Avatar" style="width:80px; height:70px; align:left;">
+<img src="{{ url_for('static', filename= 'Profile_avatar.png') }}" alt="Avatar" style="width:80px; height:70px; align:left;">
 <h4> LS </h4>
-<img src="germany.jpg" alt="Mainz Germany View" style="width:600px; height: 500px";>
+<img src= "{{ url_for('static', filename= 'germany.jpg') }}" alt="Mainz Germany View" style="width:600px; height: 500px";>
 <h4> My trip tp Germany was awsome, it was the first time I go to Germany in winter, and I loved it. Going to Germany in an advent time is really great, because there are a lot of sales and christmas markets everywhere.</h4> 
 
 </body>
