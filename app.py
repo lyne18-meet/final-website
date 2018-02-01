@@ -50,4 +50,4 @@ def search():
 
 @app.route('/profile')
 def profile():
-	return render_template("profile.html",users=users)
+	return render_template("profile.html")
