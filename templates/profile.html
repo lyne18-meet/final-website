@@ -3,9 +3,57 @@
 <head>
 	<title></title>
 </head>
-<body>
+<body background="{{ url_for('static', filename= 'blue.jpg') }}">
+<style>
+body {
 
-<img src="Profile_avatar.png" alt="Avatar" style="width:80px; height:70px;">
+  background-repeat: no-repeat;
+  background-size: 104% 1100%;
+
+  margin:0;
+  text-align: center;
+
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #8EE5CE;
+}
+
+.topnav a {
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #D5D5D5;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #8EE5CE;
+  color: white;
+}
+	body {
+   background-image: url('static', filename= "blue.jpg");
+ }
+</style>
+<div class="topnav">
+  <a href="/home">Home</a>
+  <a href="/search">Search</a> 
+  <a href="/profile">Profile</a>
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+<img src= "{{ url_for('static', filename= 'Profile_avatar.png') }}" style="width:150px; height: 140px";>
 <h3> Name: <input type="text"></h3>
 </body>
 </html>

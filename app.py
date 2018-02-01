@@ -40,6 +40,17 @@ def signup_form():
 	db.session.commit()
 	return render_template("home.html")
     
+@app.route('/home')
+def home():
+	return render_template("home.html")
+
+@app.route('/search')
+def search():
+	return render_template("search.html")
+
+@app.route('/profile')
+def profile():
+	return render_template("profile.html",users=users)
 
 if __name__ == "__main__":
 	app.run()

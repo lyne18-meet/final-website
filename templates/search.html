@@ -31,15 +31,17 @@ body {
   background-color: #8EE5CE;
   color: white;
 }
-
+body {
+   background-image: url_for('static', filename= "blue.jpg");
+ }
 </style>
 	<title></title>
 </head>
 <body>
 <div class="topnav">
-  <a href="#home">Home</a>
-  <a href="#search">Search</a> 
-  <a href="#profile">Profile</a>
+  <a href="/home">Home</a>
+  <a href="/search">Search</a> 
+  <a href="/profile">Profile</a>
   <div class="search-container">
     <form action="/action_page.php">
       <input type="text" placeholder="Search.." name="search">
